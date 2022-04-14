@@ -1,2 +1,2 @@
-/reverse_the_array
-/reverse_the_array.cpp:tests
+*.cpp:tests
+.DS_Store
