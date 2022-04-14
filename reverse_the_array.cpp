@@ -1,26 +1,31 @@
 // Reverse the array
 // Brout force solution
 // Time complexity: O(n)
-// Space complexity: O(n)
+// Space complexity: O(1)
 #include<iostream>
 using namespace std;
 
 int main(){
-	int size = 10;
-	int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-	int res[size];
+	int size = 9;
+	int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
 
-	int j = size;
-	for (int i = 0; i < size; ++i)
-	{
+	int i = 0;
+	int j = size - 1;
+
+	while(j > i){
+
+		arr[i] = arr[j] + arr[i];
+		arr[j] = arr[i] - arr[j];
+		arr[i] = arr[i] - arr[j];
+
+		i ++;
 		j --;
-		res[j] = arr[i];
 	}
 
 	for (int i = 0; i < size; ++i)
 	{
-		cout << res[i] << endl;	
+		cout << arr[i] << endl;
 	}
-	
+
     return 0;
 }
